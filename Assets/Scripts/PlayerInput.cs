@@ -88,7 +88,7 @@ public class PlayerInput : MonoBehaviour
         
         obj.InteractionScenario();
         
-        // Debug.Log($"Interact with {obj.entityId}");
+        Debug.Log($"Interact with {obj.entityId}");
     }
     
 }

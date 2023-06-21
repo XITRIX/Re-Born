@@ -289,7 +289,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.103773594, g: 0.1032841, b: 0.1032841, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -390,10 +390,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maps:
-  - id: TestMap
-    gameObject: {fileID: 4278117423157890144, guid: 28ad9b1d6e79a4d14a9f5b3a7c2dcbed, type: 3}
-  - id: CityMap
-    gameObject: {fileID: 4700011962842049807, guid: a605377ddfd574f2a9e3b4f2ba901737, type: 3}
+  - {fileID: 3483877957781081934, guid: 28ad9b1d6e79a4d14a9f5b3a7c2dcbed, type: 3}
+  - {fileID: -3503462542109316815, guid: a605377ddfd574f2a9e3b4f2ba901737, type: 3}
+  - {fileID: 4136186004877303654, guid: ece33e314d24149e48210cb6690cf394, type: 3}
   prefabs:
   - id: CharPrefab
     gameObject: {fileID: 4094342334004014635, guid: 2bb0967474b9c4cfaadb4aa92d566564, type: 3}

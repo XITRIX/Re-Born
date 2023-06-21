@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,10 @@ using UnityEngine;
 public class ItemScript : EntityScript
 {
     private SpriteRenderer _spriteRenderer;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
+        GlobalDirector.Shared.GameObjectsStash[entityId] = gameObject;
     }
 
     public void SetSprite(Sprite sprite)

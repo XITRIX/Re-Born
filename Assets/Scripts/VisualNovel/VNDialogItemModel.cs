@@ -11,6 +11,13 @@ public class VNDialogItemModel
     [Inspectable]
     public string name;
 
-    [Inspectable]
+    [Inspectable] 
     public string message;
+
+    public VNDialogItemModel(string name, string message, Sprite avatar)
+    {
+        this.name = name;
+        this.message = message;
+        this.avatar = avatar;
+    }
 }

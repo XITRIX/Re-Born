@@ -27,10 +27,12 @@ public class CharacterScript : EntityScript
     private int _animationFrame;
     
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        GlobalDirector.Shared.GameObjectsStash[entityId] = gameObject;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        PerformAnimation();
     }
 
     // Update is called once per frame

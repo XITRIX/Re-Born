@@ -9,6 +9,12 @@ public abstract class EntityScript : MonoBehaviour
 {
     public string entityId;
 
+    public void OnDestroy()
+    {
+        GlobalDirector.Shared.GameObjectsStash[entityId] = null;
+        Debug.Log($"{entityId} destroyed");
+    }
+
     [CanBeNull]
     public Action InteractionScenario => () =>
     {

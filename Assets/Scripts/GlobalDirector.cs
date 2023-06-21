@@ -19,11 +19,12 @@ public class GlobalDirector : MonoBehaviour
 
     public static GlobalDirector Shared { get; private set; }
 
-    public List<ObjectMap<GameObject>> maps;
+    public List<MapScript> maps;
     public List<ObjectMap<GameObject>> prefabs;
 
     public PlayerInput currentPlayerObject;
-    private GameObject _currentMap;
+    private string _lastMapId;
+    private MapScript _currentMap;
 
     public readonly Dictionary<string, GameObject> GameObjectsStash = new();
     private readonly HashSet<string> _scenarioKeys = new();
@@ -42,12 +43,16 @@ public class GlobalDirector : MonoBehaviour
             Destroy(keyValuePair.Value); 
         }
         GameObjectsStash.Clear();
-        
-        currentPlayerObject = null;
+
+        if (currentPlayerObject)
+        {
+            Destroy(currentPlayerObject.gameObject);
+            currentPlayerObject = null;
+        }
 
         if (_currentMap != null)
         {
-            Destroy(_currentMap);
+            Destroy(_currentMap.gameObject);
             _currentMap = null;
         }
         
@@ -56,8 +61,14 @@ public class GlobalDirector : MonoBehaviour
 
     public static void LoadMap(string map)
     {
+        Shared._lastMapId = Shared._currentMap?.id ?? "Initial";
         Shared.PrepareToLoadMap();
-        Shared._currentMap = Instantiate(Shared.maps.First(v => v.id == map).gameObject);
+        Shared._currentMap = Instantiate(Shared.maps.First(v => v.id == map));
+    }
+
+    public static string GetLastMapId()
+    {
+        return Shared._lastMapId;
     }
 
     public static void LoadCharacter(string id, CharacterScriptableObject character, Vector2 position, bool isPlayer)
@@ -119,7 +130,7 @@ public class GlobalDirector : MonoBehaviour
     {
         var obj = Shared.GameObjectsStash[id];
         Destroy(obj);
-        Shared.GameObjectsStash[id] = null;
+        // Shared.GameObjectsStash[id] = null;
     }
 
     public static void SetScenarioKey(string key, bool set)

@@ -5284,6 +5284,7 @@ GameObject:
   - component: {fileID: 5542805732041367000}
   - component: {fileID: 3552045175939639650}
   - component: {fileID: 4501711355841148078}
+  - component: {fileID: 3483877957781081934}
   m_Layer: 0
   m_Name: TestMap
   m_TagString: Untagged
@@ -5339,6 +5340,19 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 3a44e2507e5db408bbe7f14eec4bbd61, type: 2}
+--- !u!114 &3483877957781081934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278117423157890144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1275dbcbce9774adaa33578ccf52cfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: TestMap
 --- !u!1 &5290395115612453001
 GameObject:
   m_ObjectHideFlags: 0
