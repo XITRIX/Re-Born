@@ -11,8 +11,12 @@ public abstract class EntityScript : MonoBehaviour
 
     public void OnDestroy()
     {
-        GlobalDirector.Shared.GameObjectsStash[entityId] = null;
-        Debug.Log($"{entityId} destroyed");
+        if (GlobalDirector.Shared.GameObjectsStash.ContainsKey(entityId) &&
+            GlobalDirector.Shared.GameObjectsStash[entityId] == gameObject)
+        {
+            GlobalDirector.Shared.GameObjectsStash[entityId] = null;
+            Debug.Log($"{entityId} destroyed");
+        }
     }
 
     [CanBeNull]

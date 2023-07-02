@@ -8,11 +8,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerInput : MonoBehaviour
 {
+    public float characterWalkSpeed = 2;
+    public float characterRunSpeed = 4;
+    
     private CharacterScript _character;
     private readonly List<EntityScript> _objectsToInteract = new();
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _character = GetComponent<CharacterScript>();
     }
@@ -32,7 +35,7 @@ public class PlayerInput : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         var entity = col.GetComponent<EntityScript>();
-        if (!entity || entity.entityId == null) { return; }
+        if (!entity || string.IsNullOrEmpty(entity.entityId)) { return; }
         
         // Debug.Log($"Enter: {entity.entityId}");
 
@@ -75,6 +78,8 @@ public class PlayerInput : MonoBehaviour
         {
             direction = Vector2.zero;
         }
+
+        _character.movementSpeed = Input.GetKey(KeyCode.LeftShift) ? characterRunSpeed : characterWalkSpeed;
 
         _character.direction = direction;
     }

@@ -27,12 +27,24 @@ public class CharacterScript : EntityScript
     private int _animationFrame;
     
     // Start is called before the first frame update
-    public void Start()
+    public void Awake()
     {
         GlobalDirector.Shared.GameObjectsStash[entityId] = gameObject;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         PerformAnimation();
+    }
+
+    private void Start()
+    {
+        if (GlobalDirector.Shared.currentPlayerObject == null || GlobalDirector.Shared.currentPlayerObject.gameObject != gameObject)
+        {
+            GetComponent<Rigidbody2D>().mass = 99999;
+        }
+        else
+        {
+            _spriteRenderer.sortingOrder = 1;
+        }
     }
 
     // Update is called once per frame
@@ -104,7 +116,8 @@ public class CharacterScript : EntityScript
         
         _spriteRenderer.sprite = FrameForDirection(_lastDirection, _animationFrame, isIdle);
 
-        if (++_animationCounter >= animationTick)
+        _animationCounter += (int)movementSpeed / 2;
+        if (_animationCounter >= animationTick)
         {
             _animationCounter = 0;
             _animationFrame++;

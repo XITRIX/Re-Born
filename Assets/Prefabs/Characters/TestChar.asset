@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5876d934c15f4800a5b57ce69e43130, type: 3}
   m_Name: TestChar
   m_EditorClassIdentifier: 
+  charName: 
+  avatar: {fileID: 1093768813, guid: ea174266bcaa24f6084367a25767cec6, type: 3}
   tileset:
   - {fileID: -1471000995, guid: f371238579077426690ae1b27940b8bb, type: 3}
   - {fileID: 870257346, guid: f371238579077426690ae1b27940b8bb, type: 3}

@@ -27,18 +27,14 @@ public class LoadCharacterUnit : ManualEventUnit<Unit>
     [PortLabelHidden] 
     public ControlOutput Exit { get; private set; }
 
-    [DoNotSerialize] 
-    public ControlOutput Interaction { get; private set; }
-
     protected override void Definition()
     {
         IsPlayer = ValueInput("IsPlayer", false);
         Id = ValueInput("Id", "");
-        Position = ValueInput(typeof(Vector2), "Position");
-        Character = ValueInput(typeof(CharacterScriptableObject), "Character");
+        Position = ValueInput<Vector2>("Position");
+        Character = ValueInput<CharacterScriptableObject>("Character", null);
         Enter = ControlInput("Enter", Run);
         Exit = ControlOutput("Exit");
-        Interaction = ControlOutput("Interaction");
     }
 
     public override void StartListening(GraphStack stack)
@@ -54,29 +50,7 @@ public class LoadCharacterUnit : ManualEventUnit<Unit>
         var position = flow.GetValue<Vector2>(Position);
         var character = flow.GetValue<CharacterScriptableObject>(Character);
 
-        if (isPlayer && GlobalDirector.Shared.currentPlayerObject)
-        {
-            Debug.LogError("Player object is already presented");
-            return Exit;
-        }
-
-        var obj = GameObject.Instantiate(GlobalDirector.Shared.prefabs.First(v => v.id == "CharPrefab").gameObject,
-            position, Quaternion.identity);
-
-        var characterObj = obj.GetComponent<CharacterScript>();
-        characterObj.entityId = id;
-        characterObj.characterModel = character;
-
-        if (isPlayer)
-        {
-            GlobalDirector.Shared.currentPlayerObject = characterObj.AddComponent<PlayerInput>();
-        }
-        else
-        {
-            characterObj.GetComponent<Rigidbody2D>().mass = 99999;
-        }
-
-        GlobalDirector.Shared.GameObjectsStash[id] = characterObj.gameObject;
+        GlobalDirector.LoadCharacter(id, character, position, isPlayer);
 
         return Exit;
     }

@@ -13,6 +13,8 @@ public class VNCanvasController : MonoBehaviour
     public Image avatarField;
     public TextMeshProUGUI nameField;
     public TypewriterEffect messageField;
+    public VerticalLayoutGroup buttonsHolder;
+    public Button buttonPrefab;
 
     // Start is called before the first frame update
     void Awake()

@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
+// [RequireComponent(typeof(SpriteRenderer))]
 public class ItemScript : EntityScript
 {
-    private SpriteRenderer _spriteRenderer;
+    // private SpriteRenderer _spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
+        if (string.IsNullOrEmpty(entityId)) return;
         GlobalDirector.Shared.GameObjectsStash[entityId] = gameObject;
     }
 

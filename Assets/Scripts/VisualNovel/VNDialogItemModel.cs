@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,5 +20,13 @@ public class VNDialogItemModel
         this.name = name;
         this.message = message;
         this.avatar = avatar;
+    }
+
+    public VNDialogItemModel(string id, string message)
+    {
+        var obj = GlobalDirector.Shared.characters.First(x => x.id == id).gameObject;
+        name = obj.name;
+        avatar = obj.avatar;
+        this.message = message;
     }
 }

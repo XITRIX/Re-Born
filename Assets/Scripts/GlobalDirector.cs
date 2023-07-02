@@ -21,6 +21,7 @@ public class GlobalDirector : MonoBehaviour
 
     public List<MapScript> maps;
     public List<ObjectMap<GameObject>> prefabs;
+    public List<ObjectMap<CharacterScriptableObject>> characters;
 
     public PlayerInput currentPlayerObject;
     private string _lastMapId;
@@ -29,9 +30,14 @@ public class GlobalDirector : MonoBehaviour
     public readonly Dictionary<string, GameObject> GameObjectsStash = new();
     private readonly HashSet<string> _scenarioKeys = new();
     private Canvas _vnCanvas;
-    private void Awake()
+
+    public GlobalDirector()
     {
         Shared = this;
+    }
+    
+    private void Awake()
+    {
         _vnCanvas = Instantiate(prefabs.First(v => v.id == "VNCanvasPrefab").gameObject).GetComponent<Canvas>();
         _vnCanvas.enabled = false;
     }
@@ -83,8 +89,11 @@ public class GlobalDirector : MonoBehaviour
         
         var characterObj = obj.GetComponent<CharacterScript>();
         characterObj.entityId = id;
-        characterObj.characterModel = character;
         
+        characterObj.characterModel = character != null ? 
+            character : 
+            Shared.characters.FirstOrDefault(x => x.id == id)?.gameObject;
+
         if (isPlayer)
         {
             Shared.currentPlayerObject = characterObj.AddComponent<PlayerInput>();
@@ -95,6 +104,7 @@ public class GlobalDirector : MonoBehaviour
         }
 
         Shared.GameObjectsStash[id] = characterObj.gameObject;
+        Debug.Log($"Character created: {id}");
     }
 
     public static void LoadItem(string id, Sprite sprite, Vector2 position, bool isPhysical)
@@ -110,13 +120,24 @@ public class GlobalDirector : MonoBehaviour
         Shared.GameObjectsStash[id] = itemObj.gameObject;
     }
 
-    public static void SetCameraTarget(string objectId)
+    public static void SetCameraTarget(string objectId, bool instantly)
     {
         CameraScript.Shared.followedObject = Shared.GameObjectsStash[objectId];
+        Debug.Log($"Set camera to object {objectId}");
+        
+        if (instantly)
+        {
+            var transform = CameraScript.Shared.transform;
+            
+            var pos = Shared.GameObjectsStash[objectId].transform.position;
+            pos.z = transform.position.z;
+            transform.position = pos;
+        }
     }
 
     public static void SetPlayerInputEnabled(bool enabled)
     {
+        if (Shared == null || Shared.currentPlayerObject == null) return;
         Shared.currentPlayerObject.ForceStop();
         Shared.currentPlayerObject.enabled = enabled;
     }
@@ -154,5 +175,12 @@ public class GlobalDirector : MonoBehaviour
     public static void MoveObjectToCoordinate(string id, Vector2 position, bool waitToFinish)
     {
         var obj = Shared.GameObjectsStash[id];
+    }
+
+    public static CharacterScriptableObject GetCharacterModelById(string id)
+    {
+        return string.IsNullOrEmpty(id) ? 
+            ScriptableObject.CreateInstance<CharacterScriptableObject>() : 
+            Shared.characters.First(x => x.id == id).gameObject;
     }
 }

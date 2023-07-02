@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -358,6 +359,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followedObject: {fileID: 0}
+  cameraSpeed: 2
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 32
+  m_RefResolutionX: 480
+  m_RefResolutionY: 320
+  m_UpscaleRT: 1
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &2132061362
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,13 +415,21 @@ MonoBehaviour:
   - {fileID: 3483877957781081934, guid: 28ad9b1d6e79a4d14a9f5b3a7c2dcbed, type: 3}
   - {fileID: -3503462542109316815, guid: a605377ddfd574f2a9e3b4f2ba901737, type: 3}
   - {fileID: 4136186004877303654, guid: ece33e314d24149e48210cb6690cf394, type: 3}
+  - {fileID: 5077423798325466666, guid: a99e0f6784b0644af952995bf4bad6b3, type: 3}
   prefabs:
   - id: CharPrefab
     gameObject: {fileID: 4094342334004014635, guid: 2bb0967474b9c4cfaadb4aa92d566564, type: 3}
   - id: ItemPrefab
     gameObject: {fileID: 4459585793960854481, guid: cbc6c6f5fb0b944239dba681f4bdd757, type: 3}
   - id: VNCanvasPrefab
-    gameObject: {fileID: 5668344188774354034, guid: 3645b812df0da40c8bb922253cab1b6c, type: 3}
+    gameObject: {fileID: 7556712520776566325, guid: 3645b812df0da40c8bb922253cab1b6c, type: 3}
+  characters:
+  - id: Player
+    gameObject: {fileID: 11400000, guid: 560774ff9a5044660abe19eec5639bb9, type: 2}
+  - id: Char1
+    gameObject: {fileID: 11400000, guid: 74ef948ac9d4d43649a427a2a31edf9d, type: 2}
+  - id: Daria
+    gameObject: {fileID: 11400000, guid: 74ef948ac9d4d43649a427a2a31edf9d, type: 2}
   currentPlayerObject: {fileID: 0}
 --- !u!4 &2132061364
 Transform:

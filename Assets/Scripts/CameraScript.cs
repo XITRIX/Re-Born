@@ -9,6 +9,7 @@ public class CameraScript : MonoBehaviour
     public static CameraScript Shared { get; private set; }
 
     public GameObject followedObject;
+    public float cameraSpeed = 1;
 
     private Transform Transform { get; set; }
 
@@ -16,6 +17,7 @@ public class CameraScript : MonoBehaviour
     void Awake()
     {
         Shared = this;
+        Debug.Log("Camera created");
     }
 
     private void Start()
@@ -35,9 +37,11 @@ public class CameraScript : MonoBehaviour
         
         var position = Transform.position;
 
-        position.x = followedObject.transform.position.x;
-        position.y = followedObject.transform.position.y;
+        var target = Vector3.Lerp(transform.position, followedObject.transform.position, Time.deltaTime * cameraSpeed);
+        target.z = position.z;
+        
+        Transform.position = target;
 
-        Transform.position = position;
+        // Transform.position = position;
     }
 }

@@ -47,3 +47,6 @@ TagManager:
   - name: Foreground
     uniqueID: 3305264335
     locked: 0
+  - name: DebugBorders
+    uniqueID: 1625752751
+    locked: 0
