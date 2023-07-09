@@ -8,6 +8,7 @@ using Object = UnityEngine.Object;
 public class TypewriterEffect : MonoBehaviour
 {
     private TextMeshProUGUI _textBox;
+    private bool startSkipping = false;
 
     private void Awake()
     {
@@ -19,21 +20,26 @@ public class TypewriterEffect : MonoBehaviour
         yield return StartCoroutine(RevealText(text));
     }
     
-    IEnumerator RevealText(string originalString) {
+    IEnumerator RevealText(string originalString)
+    {
+        startSkipping = false;
         _textBox.text = "";
 
+        var trimmedString = originalString.Trim();
         var numCharsRevealed = 0;
-        while (numCharsRevealed < originalString.Length)
+        while (numCharsRevealed < trimmedString.Length)
         {
+            startSkipping |= !Input.GetKey(KeyCode.Space);
+            
             while (originalString[numCharsRevealed] == ' ')
                 ++numCharsRevealed;
 
             ++numCharsRevealed;
 
-            var newText = originalString.Insert(numCharsRevealed, "<color=#00000000>") + "</color>";
+            var newText = trimmedString.Insert(numCharsRevealed, "<color=#00000000>") + "</color>";
             _textBox.text = newText;
 
-            yield return new WaitForSeconds(0.07f);
+            yield return new WaitForSeconds(startSkipping && Input.GetKey(KeyCode.Space) ? 0.01f : 0.07f);
         }
     } 
 }

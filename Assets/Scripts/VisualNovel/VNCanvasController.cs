@@ -15,6 +15,7 @@ public class VNCanvasController : MonoBehaviour
     public TypewriterEffect messageField;
     public VerticalLayoutGroup buttonsHolder;
     public Button buttonPrefab;
+    public Image bgImage;
 
     // Start is called before the first frame update
     void Awake()
@@ -41,5 +42,30 @@ public class VNCanvasController : MonoBehaviour
     public static IEnumerator SetMessage(string message)
     {
         yield return Shared.messageField.SetText(message);
+    }
+
+    public IEnumerator FadeBackground(bool fade, float seconds)
+    {
+        bgImage.enabled = true;
+        var startImageColor = bgImage.color;
+        var targetImageColor = startImageColor.WithAlpha(fade ? 0 : 1);
+
+        if (seconds == 0)
+        {
+            bgImage.color = targetImageColor;
+            yield return null;
+        }
+        
+        var delta = Time.fixedDeltaTime;
+        float counter = 0;
+        
+        while (counter <= seconds)
+        {
+            bgImage.color = Color.Lerp(startImageColor, targetImageColor, counter / seconds);
+            counter += delta;
+            yield return new WaitForSeconds(delta);
+        }
+
+        bgImage.color = targetImageColor;
     }
 }

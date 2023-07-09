@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5876d934c15f4800a5b57ce69e43130, type: 3}
+  m_Name: Georgy
+  m_EditorClassIdentifier: 
+  charName: "\u0416\u043E\u0440\u0430"
+  avatar: {fileID: 1093768813, guid: ea174266bcaa24f6084367a25767cec6, type: 3}
+  tileset:
+  - {fileID: -1471000995, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: 870257346, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: -1047209104, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: 1316600504, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: -1646342205, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: -1883984339, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: -1496452067, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: 625986956, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: 1159831429, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: 1977005604, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: 747404953, guid: f371238579077426690ae1b27940b8bb, type: 3}
+  - {fileID: -913911538, guid: f371238579077426690ae1b27940b8bb, type: 3}
