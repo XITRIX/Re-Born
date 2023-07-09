@@ -47,7 +47,7 @@ public class VNDialogChoiseUnit : Unit, IBranchUnit
     private IEnumerator Enter(Flow flow)
     {
         GlobalDirector.SetPlayerInputEnabled(false);
-        GlobalDirector.SetVnCanvasPresented(true);
+        VNCanvasController.ShowMessageCanvas(true);
         VNCanvasController.Shared.buttonsHolder.enabled = true;
 
         var selected = "";
@@ -62,13 +62,13 @@ public class VNDialogChoiseUnit : Unit, IBranchUnit
         }
 
         yield return new WaitUntil(() => !string.IsNullOrEmpty(selected));
+        VNCanvasController.ShowMessageCanvas(false);
         
         foreach (Transform child in VNCanvasController.Shared.buttonsHolder.transform) {
             Object.Destroy(child.gameObject);
         }
         
         VNCanvasController.Shared.buttonsHolder.enabled = false;
-        GlobalDirector.SetVnCanvasPresented(false);
         GlobalDirector.SetPlayerInputEnabled(true);
         
         yield return branches.FirstOrDefault(x => x.Key == selected).Value;

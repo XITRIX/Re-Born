@@ -39,7 +39,6 @@ public class GlobalDirector : MonoBehaviour
     private void Awake()
     {
         _vnCanvas = Instantiate(prefabs.First(v => v.id == "VNCanvasPrefab").gameObject).GetComponent<Canvas>();
-        _vnCanvas.enabled = false;
     }
 
     private void PrepareToLoadMap()
@@ -61,8 +60,6 @@ public class GlobalDirector : MonoBehaviour
             Destroy(_currentMap.gameObject);
             _currentMap = null;
         }
-        
-        _vnCanvas.enabled = false;
     }
 
     public static void LoadMap(string map)
@@ -169,12 +166,7 @@ public class GlobalDirector : MonoBehaviour
 
     public static void SetVnCanvasPresented(bool presented)
     {
-        Shared._vnCanvas.enabled = presented;
-    }
-
-    public static void MoveObjectToCoordinate(string id, Vector2 position, bool waitToFinish)
-    {
-        var obj = Shared.GameObjectsStash[id];
+        Shared._vnCanvas.enabled = true;
     }
 
     public static CharacterScriptableObject GetCharacterModelById(string id)

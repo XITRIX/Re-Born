@@ -36,10 +36,12 @@ public class VNMessageUnit : Unit
         var avatar = flow.GetValue<Sprite>(Avatar);
         var name = flow.GetValue<string>(Name);
         var message = flow.GetValue<string>(Message);
+        VNCanvasController.ShowMessageCanvas(true);
         VNCanvasController.SetAvatar(avatar);
         VNCanvasController.SetName(name);
         yield return VNCanvasController.SetMessage(message);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        VNCanvasController.ShowMessageCanvas(false);
         yield return Exit;
     }
 }

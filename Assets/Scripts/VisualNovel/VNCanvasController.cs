@@ -10,6 +10,7 @@ public class VNCanvasController : MonoBehaviour
 {
     public static VNCanvasController Shared { get; private set; }
 
+    public GameObject messageHolder;
     public Image avatarField;
     public TextMeshProUGUI nameField;
     public TypewriterEffect messageField;
@@ -21,6 +22,12 @@ public class VNCanvasController : MonoBehaviour
     void Awake()
     {
         Shared = this;
+        messageHolder.SetActive(false);
+    }
+
+    public static void ShowMessageCanvas(bool show)
+    {
+        Shared.messageHolder.SetActive(show);
     }
     
     public static void SetAvatar(Sprite avatar)
@@ -44,28 +51,29 @@ public class VNCanvasController : MonoBehaviour
         yield return Shared.messageField.SetText(message);
     }
 
-    public IEnumerator FadeBackground(bool fade, float seconds)
+    public IEnumerator ChangeBackgroundFading(bool fade, float seconds)
     {
         bgImage.enabled = true;
         var startImageColor = bgImage.color;
         var targetImageColor = startImageColor.WithAlpha(fade ? 0 : 1);
-
+    
         if (seconds == 0)
         {
             bgImage.color = targetImageColor;
-            yield return null;
         }
-        
-        var delta = Time.fixedDeltaTime;
-        float counter = 0;
-        
-        while (counter <= seconds)
+        else
         {
-            bgImage.color = Color.Lerp(startImageColor, targetImageColor, counter / seconds);
-            counter += delta;
-            yield return new WaitForSeconds(delta);
-        }
+            var delta = Time.fixedDeltaTime;
+            float counter = 0;
 
-        bgImage.color = targetImageColor;
+            while (counter <= seconds)
+            {
+                bgImage.color = Color.Lerp(startImageColor, targetImageColor, counter / seconds);
+                counter += delta;
+                yield return new WaitForSeconds(delta);
+            }
+
+            bgImage.color = targetImageColor;
+        }
     }
 }

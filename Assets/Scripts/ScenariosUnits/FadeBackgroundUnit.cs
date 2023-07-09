@@ -5,7 +5,7 @@ using UnityEngine;
 
 [UnitCategory("Scenario Units/Fade screen")]
 [UnitSubtitle("Fade screen")]
-public class VNFadeBackgroundUnit : Unit
+public class FadeBackgroundUnit : Unit
 {
     [DoNotSerialize]
     public ValueInput Fade { get; private set; }
@@ -34,7 +34,7 @@ public class VNFadeBackgroundUnit : Unit
         var fadeValue = flow.GetValue<bool>(Fade);
         var secondsValue = flow.GetValue<float>(Seconds);
 
-        yield return VNCanvasController.Shared.FadeBackground(fadeValue, secondsValue);
+        yield return VNCanvasController.Shared.ChangeBackgroundFading(fadeValue, secondsValue);
         yield return Exit;
     }
 }
