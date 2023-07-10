@@ -15,6 +15,11 @@ public class VNDialogChoiseUnit : Unit, IBranchUnit
     [Inspectable, Serialize]
     public List<string> options { get; set; } = new List<string>();
     
+    [DoNotSerialize]
+    [PortLabelHidden]
+    [AllowsNull]
+    public ValueInput Excludes { get; private set; }
+    
     /// <summary>
     /// The entry point for the switch.
     /// </summary>
@@ -25,6 +30,7 @@ public class VNDialogChoiseUnit : Unit, IBranchUnit
     protected override void Definition()
     {
         enter = ControlInputCoroutine(nameof(enter), Enter);
+        Excludes = ValueInput<List<string>>("Excludes");
 
         branches = new List<KeyValuePair<string, ControlOutput>>();
 
@@ -46,6 +52,12 @@ public class VNDialogChoiseUnit : Unit, IBranchUnit
 
     private IEnumerator Enter(Flow flow)
     {
+        var excludesValue = new List<string>();
+        try
+        {
+            excludesValue = flow.GetValue<List<string>>(Excludes);
+        } catch { /* ignored */ }
+
         GlobalDirector.SetPlayerInputEnabled(false);
         VNCanvasController.ShowMessageCanvas(true);
         VNCanvasController.Shared.buttonsHolder.enabled = true;
@@ -53,6 +65,8 @@ public class VNDialogChoiseUnit : Unit, IBranchUnit
         var selected = "";
         foreach (var branch in branches)
         {
+            if (excludesValue.Contains(branch.Key)) continue;
+            
             var button = Object.Instantiate(VNCanvasController.Shared.buttonPrefab, VNCanvasController.Shared.buttonsHolder.transform, true);
             button.GetComponentInChildren<TextMeshProUGUI>().text = branch.Key;
             button.onClick.AddListener(() =>
