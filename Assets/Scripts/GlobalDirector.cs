@@ -141,7 +141,7 @@ public class GlobalDirector : MonoBehaviour
 
     public static GameObject GetEntityById(string id)
     {
-        return Shared.GameObjectsStash[id];
+        return Shared.GameObjectsStash.TryGetValue(id, out var value) ? value : null;
     }
 
     public static void DestroyEntityById(string id)

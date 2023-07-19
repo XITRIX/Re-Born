@@ -6991,7 +6991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2386478654974180550, guid: 173f1595799314007bda3fc4f910d406, type: 3}
       propertyPath: m_Name
-      value: Spawn1
+      value: InitialSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 2772598981019797243, guid: 173f1595799314007bda3fc4f910d406, type: 3}
       propertyPath: m_IsTrigger
@@ -6999,7 +6999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3490857079955185177, guid: 173f1595799314007bda3fc4f910d406, type: 3}
       propertyPath: entityId
-      value: Spawn1
+      value: InitialSpawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7775,7 +7775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2386478654974180550, guid: 173f1595799314007bda3fc4f910d406, type: 3}
       propertyPath: m_Name
-      value: Spawn2
+      value: FirstCitySpawn
       objectReference: {fileID: 0}
     - target: {fileID: 2772598981019797243, guid: 173f1595799314007bda3fc4f910d406, type: 3}
       propertyPath: m_IsTrigger
@@ -7783,7 +7783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3490857079955185177, guid: 173f1595799314007bda3fc4f910d406, type: 3}
       propertyPath: entityId
-      value: Spawn2
+      value: FirstCitySpawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
