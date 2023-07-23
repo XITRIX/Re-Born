@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5876d934c15f4800a5b57ce69e43130, type: 3}
+  m_Name: Barman
+  m_EditorClassIdentifier: 
+  charName: "\u0411\u0430\u0440\u043C\u0435\u043D"
+  avatar: {fileID: -1047324230, guid: 266dc1d07595b44f89a0c95d62c7b91e, type: 3}
+  tileset:
+  - {fileID: 1575745034, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: 2062161575, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: -903854779, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: 253944908, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: -1039115224, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: -1440147561, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: 875656992, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: -394555675, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: -558162736, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: 124793993, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: -1147804334, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}
+  - {fileID: -1408894656, guid: da3169ad179e4455aa21f9ae832b6a8f, type: 3}

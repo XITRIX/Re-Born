@@ -427,13 +427,21 @@ MonoBehaviour:
     gameObject: {fileID: 601456666325520654, guid: 3645b812df0da40c8bb922253cab1b6c, type: 3}
   characters:
   - id: Player
-    gameObject: {fileID: 11400000, guid: 560774ff9a5044660abe19eec5639bb9, type: 2}
+    gameObject: {fileID: 11400000, guid: 716dedeaf824942df91e2f6d9ed03e83, type: 2}
   - id: Char1
     gameObject: {fileID: 11400000, guid: 74ef948ac9d4d43649a427a2a31edf9d, type: 2}
   - id: Daria
     gameObject: {fileID: 11400000, guid: 74ef948ac9d4d43649a427a2a31edf9d, type: 2}
   - id: Georgy
     gameObject: {fileID: 11400000, guid: fb8124d662d5e4ca281f729fa80cbeb2, type: 2}
+  - id: Barman
+    gameObject: {fileID: 11400000, guid: 7d5900ad12c864a12a9e1b4590488e43, type: 2}
+  - id: Axeman
+    gameObject: {fileID: 11400000, guid: 499f7768c2487407b9d8e611933b0b5f, type: 2}
+  - id: Alcoman
+    gameObject: {fileID: 11400000, guid: b6e0952e09c044c40a94217e9a97841b, type: 2}
+  - id: LadyOnBench
+    gameObject: {fileID: 11400000, guid: 75e6eb23a500e42e5a86c580a9df4dd4, type: 2}
   currentPlayerObject: {fileID: 0}
 --- !u!4 &2132061364
 Transform:
