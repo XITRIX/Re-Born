@@ -34,7 +34,9 @@ public class FadeBackgroundUnit : Unit
         var fadeValue = flow.GetValue<bool>(Fade);
         var secondsValue = flow.GetValue<float>(Seconds);
 
+        GlobalDirector.SetPlayerInputEnabled(false);
         yield return VNCanvasController.Shared.ChangeBackgroundFading(fadeValue, secondsValue);
+        GlobalDirector.SetPlayerInputEnabled(true);
         yield return Exit;
     }
 }
