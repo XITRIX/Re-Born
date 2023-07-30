@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterScript : EntityScript
 {
-    enum Direction
+    public enum Direction
     {
         Down, Left, Right, Up
     }
@@ -21,7 +22,7 @@ public class CharacterScript : EntityScript
     private Rigidbody2D _rigidbody2D;
 
     public Vector2 direction;
-    private Direction _lastDirection;
+    public Direction lastDirection;
     
     private int _animationCounter;
     private int _animationFrame;
@@ -93,19 +94,19 @@ public class CharacterScript : EntityScript
         
         if (direction.x > 0)
         {
-            _lastDirection = Direction.Right;
+            lastDirection = Direction.Right;
         }
         else if (direction.x < 0)
         {
-            _lastDirection = Direction.Left;
+            lastDirection = Direction.Left;
         }
         else if (direction.y > 0)
         {
-            _lastDirection = Direction.Up;
+            lastDirection = Direction.Up;
         }
         else if (direction.y < 0)
         {
-            _lastDirection = Direction.Down;
+            lastDirection = Direction.Down;
         }
         else
         {
@@ -114,7 +115,7 @@ public class CharacterScript : EntityScript
             isIdle = true;
         }
         
-        _spriteRenderer.sprite = FrameForDirection(_lastDirection, _animationFrame, isIdle);
+        _spriteRenderer.sprite = FrameForDirection(lastDirection, _animationFrame, isIdle);
 
         _animationCounter += (int)movementSpeed / 2;
         if (_animationCounter >= animationTick)

@@ -28,6 +28,11 @@ public class PlayerInput : MonoBehaviour
         PerformInteraction();
     }
 
+    private void OnDestroy()
+    {
+        GlobalDirector.Shared.lastPlayerDirection = _character.lastDirection;
+    }
+
     public void ForceStop()
     {
         _character.direction = Vector2.zero;

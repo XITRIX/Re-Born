@@ -31,6 +31,8 @@ public class GlobalDirector : MonoBehaviour
     private readonly HashSet<string> _scenarioKeys = new();
     private Canvas _vnCanvas;
 
+    public CharacterScript.Direction? lastPlayerDirection = null;
+
     public GlobalDirector()
     {
         Shared = this;
@@ -95,6 +97,8 @@ public class GlobalDirector : MonoBehaviour
         if (isPlayer)
         {
             Shared.currentPlayerObject = characterObj.AddComponent<PlayerInput>();
+            if (Shared.lastPlayerDirection.HasValue)
+                characterObj.lastDirection = Shared.lastPlayerDirection.Value;
         }
         else
         {
