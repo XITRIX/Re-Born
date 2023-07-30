@@ -416,16 +416,16 @@ MonoBehaviour:
   - {fileID: -3503462542109316815, guid: a605377ddfd574f2a9e3b4f2ba901737, type: 3}
   - {fileID: 4136186004877303654, guid: ece33e314d24149e48210cb6690cf394, type: 3}
   - {fileID: 5077423798325466666, guid: a99e0f6784b0644af952995bf4bad6b3, type: 3}
-  - {fileID: 9141470140629729318, guid: 1531b27396ba64279b0b8d2e9c39dd52, type: 3}
+  - {fileID: 6776210925215005165, guid: 1531b27396ba64279b0b8d2e9c39dd52, type: 3}
   - {fileID: 1838388464292922390, guid: 2aacbcc0ebc424de5a5474d4b6f4c062, type: 3}
-  - {fileID: 8159890389939554880, guid: 0700c6103f96548acb12c1fde28a6d5b, type: 3}
+  - {fileID: 928086183373702258, guid: 0700c6103f96548acb12c1fde28a6d5b, type: 3}
   prefabs:
   - id: CharPrefab
     gameObject: {fileID: 4094342334004014635, guid: 2bb0967474b9c4cfaadb4aa92d566564, type: 3}
   - id: ItemPrefab
     gameObject: {fileID: 4459585793960854481, guid: cbc6c6f5fb0b944239dba681f4bdd757, type: 3}
   - id: VNCanvasPrefab
-    gameObject: {fileID: 601456666325520654, guid: 3645b812df0da40c8bb922253cab1b6c, type: 3}
+    gameObject: {fileID: 2994549502399514877, guid: 3645b812df0da40c8bb922253cab1b6c, type: 3}
   characters:
   - id: Player
     gameObject: {fileID: 11400000, guid: 716dedeaf824942df91e2f6d9ed03e83, type: 2}

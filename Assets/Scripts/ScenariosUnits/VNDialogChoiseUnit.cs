@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class VNDialogChoiseUnit : Unit, IBranchUnit
@@ -62,17 +63,27 @@ public class VNDialogChoiseUnit : Unit, IBranchUnit
         VNCanvasController.ShowMessageCanvas(true);
         VNCanvasController.Shared.buttonsHolder.enabled = true;
 
+        var buttonsParent = VNCanvasController.Shared.buttonsHolder.transform;
+
         var selected = "";
         foreach (var branch in branches)
         {
             if (excludesValue.Contains(branch.Key)) continue;
             
-            var button = Object.Instantiate(VNCanvasController.Shared.buttonPrefab, VNCanvasController.Shared.buttonsHolder.transform, true);
+            var button = Object.Instantiate(VNCanvasController.Shared.buttonPrefab, buttonsParent, true);
+            button.transform.localScale = Vector3.one;
             button.GetComponentInChildren<TextMeshProUGUI>().text = branch.Key;
             button.onClick.AddListener(() =>
             {
                 selected = branch.Key;
             });
+        }
+        
+        // Make first button active
+        if (buttonsParent.childCount > 0)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(buttonsParent.GetChild(0).gameObject);
         }
 
         yield return new WaitUntil(() => !string.IsNullOrEmpty(selected));

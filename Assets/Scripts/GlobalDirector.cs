@@ -39,6 +39,7 @@ public class GlobalDirector : MonoBehaviour
     private void Awake()
     {
         _vnCanvas = Instantiate(prefabs.First(v => v.id == "VNCanvasPrefab").gameObject).GetComponent<Canvas>();
+        Application.targetFrameRate = 60;
     }
 
     private void PrepareToLoadMap()
