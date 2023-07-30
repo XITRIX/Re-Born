@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe023f235a5a74aec9a36ab9e9575f27
+guid: 728440b1e800347f4b923342fd6605b9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FAvatar_0
+      name: Guard2_Avatar_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
         width: 144
         height: 144
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 820a1755eb614478cb71dc52385c4121
-      internalID: -1673535719
+      spriteID: f181510f0501d4ec1950159627917406
+      internalID: 520286604
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FAvatar_0: -1673535719
+      Guard2_Avatar_0: 520286604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

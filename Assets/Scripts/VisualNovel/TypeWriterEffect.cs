@@ -29,7 +29,7 @@ public class TypewriterEffect : MonoBehaviour
         var numCharsRevealed = 0;
         while (numCharsRevealed < trimmedString.Length)
         {
-            startSkipping |= !Input.GetKey(KeyCode.Space);
+            startSkipping |= !Input.GetButton("Submit");
             
             while (originalString[numCharsRevealed] == ' ')
                 ++numCharsRevealed;
@@ -39,7 +39,7 @@ public class TypewriterEffect : MonoBehaviour
             var newText = trimmedString.Insert(numCharsRevealed, "<color=#00000000>") + "</color>";
             _textBox.text = newText;
 
-            yield return new WaitForSeconds(startSkipping && Input.GetKey(KeyCode.Space) ? 0.01f : 0.07f);
+            yield return new WaitForSeconds(startSkipping && Input.GetButton("Submit") ? 0.01f : 0.07f);
         }
     } 
 }

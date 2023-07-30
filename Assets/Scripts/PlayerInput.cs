@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,20 +58,24 @@ public class PlayerInput : MonoBehaviour
     private void PerformMovement()
     {
         Vector2 direction;
-            
-        if (Input.GetKey(KeyCode.A))
+
+        var vertical = Input.GetAxis("Vertical");
+        var horizontal = Input.GetAxis("Horizontal");
+        var isHorizontal = Math.Abs(horizontal) > Math.Abs(vertical);
+        
+        if (isHorizontal && horizontal < 0)
         {
             direction = Vector2.left;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (isHorizontal && horizontal > 0)
         {
             direction = Vector2.right;
         }
-        else if (Input.GetKey(KeyCode.W))
+        else if (!isHorizontal && vertical > 0)
         {
             direction = Vector2.up;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (!isHorizontal && vertical < 0)
         {
             direction = Vector2.down;
         }
@@ -79,14 +84,15 @@ public class PlayerInput : MonoBehaviour
             direction = Vector2.zero;
         }
 
-        _character.movementSpeed = Input.GetKey(KeyCode.LeftShift) ? characterRunSpeed : characterWalkSpeed;
+        // _character.movementSpeed = Input.GetKey(KeyCode.LeftShift) ? characterRunSpeed : characterWalkSpeed;
+        _character.movementSpeed = Input.GetButton("Fire3") ? characterRunSpeed : characterWalkSpeed;
 
         _character.direction = direction;
     }
 
-    private void PerformInteraction()
+    private void PerformInteraction() 
     {
-        if (!Input.GetKeyDown(KeyCode.Space) || _objectsToInteract.Count <= 0) return;
+        if (!Input.GetButtonDown("Submit") || _objectsToInteract.Count <= 0) return;
 
         var obj = _objectsToInteract.LastOrDefault();
         if (obj == null || obj.InteractionScenario == null) return;

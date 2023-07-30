@@ -55,7 +55,8 @@ public class VNCanvasController : MonoBehaviour
     {
         bgImage.enabled = true;
         var startImageColor = bgImage.color;
-        var targetImageColor = startImageColor.WithAlpha(fade ? 0 : 1);
+        var targetImageColor = startImageColor;
+        targetImageColor.a = fade ? 0 : 1;
     
         if (seconds == 0)
         {

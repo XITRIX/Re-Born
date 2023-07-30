@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe023f235a5a74aec9a36ab9e9575f27
+guid: 0eac7a81897ad49e39d2b4aa0a0114c1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FAvatar_0
+      name: Child_Avatar_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 144
-        width: 144
+        width: 140
         height: 144
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 820a1755eb614478cb71dc52385c4121
-      internalID: -1673535719
+      spriteID: ba09f7cde24a84472bca76c562d20b68
+      internalID: -615648619
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FAvatar_0: -1673535719
+      Child_Avatar_0: -615648619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -418,6 +418,7 @@ MonoBehaviour:
   - {fileID: 5077423798325466666, guid: a99e0f6784b0644af952995bf4bad6b3, type: 3}
   - {fileID: 9141470140629729318, guid: 1531b27396ba64279b0b8d2e9c39dd52, type: 3}
   - {fileID: 1838388464292922390, guid: 2aacbcc0ebc424de5a5474d4b6f4c062, type: 3}
+  - {fileID: 8159890389939554880, guid: 0700c6103f96548acb12c1fde28a6d5b, type: 3}
   prefabs:
   - id: CharPrefab
     gameObject: {fileID: 4094342334004014635, guid: 2bb0967474b9c4cfaadb4aa92d566564, type: 3}
@@ -442,6 +443,10 @@ MonoBehaviour:
     gameObject: {fileID: 11400000, guid: b6e0952e09c044c40a94217e9a97841b, type: 2}
   - id: LadyOnBench
     gameObject: {fileID: 11400000, guid: 75e6eb23a500e42e5a86c580a9df4dd4, type: 2}
+  - id: Guard1
+    gameObject: {fileID: 11400000, guid: 6bdd795cacfd24e6ba4c4419f066e7c5, type: 2}
+  - id: Guard2
+    gameObject: {fileID: 11400000, guid: ea865d75767ad4adfa603fd84fae680f, type: 2}
   currentPlayerObject: {fileID: 0}
 --- !u!4 &2132061364
 Transform:

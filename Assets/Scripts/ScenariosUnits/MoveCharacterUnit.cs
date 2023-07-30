@@ -42,6 +42,7 @@ public class MoveCharacterUnit : Unit
         character.direction = directionValue.normalized;
         
         yield return new WaitWhile(() => Vector2.Distance(transform.position, targetPosition) > 0.1);
+        character.direction = Vector2.zero;
         transform.position = targetPosition;
         yield return Exit;
     }

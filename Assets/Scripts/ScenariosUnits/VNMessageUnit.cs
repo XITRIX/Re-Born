@@ -40,7 +40,7 @@ public class VNMessageUnit : Unit
         VNCanvasController.SetAvatar(avatar);
         VNCanvasController.SetName(name);
         yield return VNCanvasController.SetMessage(message);
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        yield return new WaitUntil(() => Input.GetButtonDown("Submit"));
         VNCanvasController.ShowMessageCanvas(false);
         yield return Exit;
     }
