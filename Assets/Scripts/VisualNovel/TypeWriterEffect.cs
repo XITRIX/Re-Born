@@ -34,9 +34,15 @@ public class TypewriterEffect : MonoBehaviour
             while (originalString[numCharsRevealed] == ' ')
                 ++numCharsRevealed;
 
+            if (originalString[numCharsRevealed] == '<')
+            {
+                do ++numCharsRevealed;
+                while (originalString[numCharsRevealed] != '>');
+            }
+
             ++numCharsRevealed;
 
-            var newText = trimmedString.Insert(numCharsRevealed, "<color=#00000000>") + "</color>";
+            var newText = trimmedString.Insert(numCharsRevealed, "<alpha=#00>"); //+ "</alpha>";
             _textBox.text = newText;
 
             yield return new WaitForSeconds(startSkipping && Input.GetButton("Submit") ? 0.01f : 0.07f);

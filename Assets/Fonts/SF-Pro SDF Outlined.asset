@@ -2732,8 +2732,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: -1.4, y: -2.12}
+        m_Offset: {x: -2.92, y: -0.71}
     m_Ints: []
     m_Floats:
     - _Ambient: 0.5
@@ -2747,26 +2747,26 @@ Material:
     - _ColorMask: 15
     - _CullMode: 0
     - _Diffuse: 0.5
-    - _FaceDilate: 0
+    - _FaceDilate: 0.207
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
-    - _GlowInner: 0.05
-    - _GlowOffset: 0
-    - _GlowOuter: 0.05
-    - _GlowPower: 0.75
+    - _GlowInner: 0.163
+    - _GlowOffset: 0.474
+    - _GlowOuter: 0.164
+    - _GlowPower: 0.814
     - _GradientScale: 10
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
     - _OutlineSoftness: 0
-    - _OutlineUVSpeedX: 0
-    - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.15
+    - _OutlineUVSpeedX: -5.24
+    - _OutlineUVSpeedY: -2.69
+    - _OutlineWidth: 0.273
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 0.73125
-    - _ScaleRatioC: 0.73125
+    - _ScaleRatioB: 0.54495
+    - _ScaleRatioC: 0.54495
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -2779,10 +2779,10 @@ Material:
     - _StencilWriteMask: 255
     - _TextureHeight: 1024
     - _TextureWidth: 1024
-    - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
-    - _UnderlayOffsetY: 0
-    - _UnderlaySoftness: 0
+    - _UnderlayDilate: 0.2
+    - _UnderlayOffsetX: 0.326
+    - _UnderlayOffsetY: -0.282
+    - _UnderlaySoftness: 0.191
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
     - _WeightBold: 0.75
@@ -2791,11 +2791,11 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
+    - _GlowColor: {r: 0.0754717, g: 0.065859735, b: 0.065859735, a: 1}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+    - _UnderlayColor: {r: 0.6226415, g: 0, b: 0, a: 0.78039217}
   m_BuildTextureStacks: []
