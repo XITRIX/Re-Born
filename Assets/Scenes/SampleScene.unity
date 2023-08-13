@@ -420,6 +420,7 @@ MonoBehaviour:
   - {fileID: 1838388464292922390, guid: 2aacbcc0ebc424de5a5474d4b6f4c062, type: 3}
   - {fileID: 11029496985469322, guid: 0700c6103f96548acb12c1fde28a6d5b, type: 3}
   - {fileID: -934833480881175656, guid: bb34676ef1a054ff69a39b26f816aa1f, type: 3}
+  - {fileID: 8645697498923340284, guid: 452fa8eb49bcf4f2fb245c1bce376fa1, type: 3}
   prefabs:
   - id: CharPrefab
     gameObject: {fileID: 4094342334004014635, guid: 2bb0967474b9c4cfaadb4aa92d566564, type: 3}
@@ -450,6 +451,10 @@ MonoBehaviour:
     gameObject: {fileID: 11400000, guid: ea865d75767ad4adfa603fd84fae680f, type: 2}
   - id: Nikita
     gameObject: {fileID: 11400000, guid: 58e127336131b422696cce3834f48e6b, type: 2}
+  - id: Gayar
+    gameObject: {fileID: 11400000, guid: 02002f2cf0ad943f2b6135aa616df81f, type: 2}
+  - id: BlackKnight
+    gameObject: {fileID: 11400000, guid: c5247286258774a74860cc43ce5a3af2, type: 2}
   currentPlayerObject: {fileID: 0}
 --- !u!4 &2132061364
 Transform:

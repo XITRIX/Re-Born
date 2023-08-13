@@ -26,6 +26,9 @@ public class TypewriterEffect : MonoBehaviour
         _textBox.text = "";
 
         var trimmedString = originalString.Trim();
+        _textBox.text = trimmedString;
+        _textBox.maxVisibleCharacters = 0;
+        
         var numCharsRevealed = 0;
         while (numCharsRevealed < trimmedString.Length)
         {
@@ -34,16 +37,15 @@ public class TypewriterEffect : MonoBehaviour
             while (originalString[numCharsRevealed] == ' ')
                 ++numCharsRevealed;
 
-            if (originalString[numCharsRevealed] == '<')
-            {
-                do ++numCharsRevealed;
-                while (originalString[numCharsRevealed] != '>');
-            }
+            // if (originalString[numCharsRevealed] == '<')
+            // {
+            //     do ++numCharsRevealed;
+            //     while (originalString[numCharsRevealed] != '>');
+            // }
 
             ++numCharsRevealed;
-
-            var newText = trimmedString.Insert(numCharsRevealed, "<alpha=#00>"); //+ "</alpha>";
-            _textBox.text = newText;
+            
+            _textBox.maxVisibleCharacters = numCharsRevealed;
 
             yield return new WaitForSeconds(startSkipping && Input.GetButton("Submit") ? 0.01f : 0.07f);
         }
