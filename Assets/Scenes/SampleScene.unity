@@ -421,6 +421,7 @@ MonoBehaviour:
   - {fileID: 11029496985469322, guid: 0700c6103f96548acb12c1fde28a6d5b, type: 3}
   - {fileID: -934833480881175656, guid: bb34676ef1a054ff69a39b26f816aa1f, type: 3}
   - {fileID: 8645697498923340284, guid: 452fa8eb49bcf4f2fb245c1bce376fa1, type: 3}
+  - {fileID: 1310433025849130866, guid: b2a65aec8670b45199772194d4675446, type: 3}
   prefabs:
   - id: CharPrefab
     gameObject: {fileID: 4094342334004014635, guid: 2bb0967474b9c4cfaadb4aa92d566564, type: 3}

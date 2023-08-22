@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: LastPart
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Last
+      Part Scenario","summary":null,"pan":{"x":-286.0001,"y":1.249847},"zoom":1.0,"elements":[{"defaultValues":{"Fade":{"$content":false,"$type":"System.Boolean"},"Seconds":{"$content":0.0,"$type":"System.Single"}},"position":{"x":-630.0,"y":-82.0},"guid":"a673ca59-ff20-47ba-9569-4616ddd827f8","$version":"A","$type":"FadeBackgroundUnit","$id":"9"},{"nest":{"source":"Macro","macro":0,"embed":null},"defaultValues":{"DefaultSpawn":{"$content":"SecondCity","$type":"System.String"}},"position":{"x":-410.0,"y":-72.0},"guid":"3627b57e-6350-4421-bc0f-9adafc71dd57","$version":"A","$type":"Unity.VisualScripting.SubgraphUnit","$id":"11"},{"Position":{"nullMeansSelf":false,"allowsNull":false,"unit":{"$ref":"14"}},"Character":{"nullMeansSelf":false,"allowsNull":false,"unit":{"$ref":"14"}},"coroutine":false,"defaultValues":{"IsPlayer":{"$content":true,"$type":"System.Boolean"},"Id":{"$content":"Player","$type":"System.String"},"Character":{"$content":1,"$type":"UnityEngine.Object"}},"position":{"x":-46.0,"y":-80.0},"guid":"891dc814-30c9-492a-89a7-db54c184a39e","$version":"A","$type":"LoadCharacterUnit","$id":"14"},{"chainable":false,"parameterNames":["objectId","instantly"],"member":{"name":"SetCameraTarget","parameterTypes":["System.String","System.Boolean"],"targetType":"GlobalDirector","targetTypeName":"GlobalDirector","$version":"A"},"defaultValues":{"%objectId":{"$content":"Player","$type":"System.String"},"%instantly":{"$content":true,"$type":"System.Boolean"}},"position":{"x":192.0,"y":-68.0},"guid":"d6daf931-7e8e-4f9a-a361-938d0595eb62","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"18"},{"defaultValues":{"Fade":{"$content":true,"$type":"System.Boolean"},"Seconds":{"$content":0.5,"$type":"System.Single"}},"position":{"x":408.0,"y":-58.0},"guid":"16857475-1f57-48a4-bfda-8b18947203da","$version":"A","$type":"FadeBackgroundUnit","$id":"22"},{"coroutine":true,"defaultValues":{},"position":{"x":-800.0,"y":-81.0},"guid":"bdde0fd3-5f40-4302-86f1-d9947006b1e0","$version":"A","$type":"Unity.VisualScripting.Start","$id":"24"},{"sourceUnit":{"$ref":"9"},"sourceKey":"Exit","destinationUnit":{"$ref":"11"},"destinationKey":"Enter","guid":"f590c9ac-bb37-4605-84bc-589e5787fe0d","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"11"},"sourceKey":"Exit","destinationUnit":{"$ref":"14"},"destinationKey":"Enter","guid":"9640d254-ce75-4e3f-97ba-be7401558fe8","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"Exit","destinationUnit":{"$ref":"18"},"destinationKey":"enter","guid":"b836b8a2-8a53-4cb6-9742-63cd69408c0f","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"exit","destinationUnit":{"$ref":"22"},"destinationKey":"Enter","guid":"9465c867-5071-484e-9ed0-7efe3baa9539","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"24"},"sourceKey":"trigger","destinationUnit":{"$ref":"9"},"destinationKey":"Enter","guid":"d6848376-feec-4372-b2f6-3f13bd2c3831","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"11"},"sourceKey":"SpawnPosition","destinationUnit":{"$ref":"14"},"destinationKey":"Position","guid":"b386db56-6729-4c48-ad03-c74c6f3d5b08","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 30bd075ad6e5b45eeb16a427ad323bf0, type: 2}
+    - {fileID: 11400000, guid: 716dedeaf824942df91e2f6d9ed03e83, type: 2}
