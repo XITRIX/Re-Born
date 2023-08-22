@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
+using Kino;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -179,5 +180,11 @@ public class GlobalDirector : MonoBehaviour
         return string.IsNullOrEmpty(id) ? 
             ScriptableObject.CreateInstance<CharacterScriptableObject>() : 
             Shared.characters.First(x => x.id == id).gameObject;
+    }
+
+    public static void SetGlitchEnabled(bool enabled)
+    {
+        Camera.main.GetComponent<AnalogGlitch>().enabled = enabled;
+        Camera.main.GetComponent<DigitalGlitch>().enabled = enabled;
     }
 }
