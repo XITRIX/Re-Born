@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scanLineJitter: 0.079
-  _verticalJump: 0
+  _verticalJump: 0.015
   _horizontalShake: 0.014
   _colorDrift: 0
   _shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
@@ -454,7 +454,7 @@ MonoBehaviour:
   - {fileID: 11029496985469322, guid: 0700c6103f96548acb12c1fde28a6d5b, type: 3}
   - {fileID: -934833480881175656, guid: bb34676ef1a054ff69a39b26f816aa1f, type: 3}
   - {fileID: 8645697498923340284, guid: 452fa8eb49bcf4f2fb245c1bce376fa1, type: 3}
-  - {fileID: 1310433025849130866, guid: b2a65aec8670b45199772194d4675446, type: 3}
+  - {fileID: 5520974625201469435, guid: b2a65aec8670b45199772194d4675446, type: 3}
   prefabs:
   - id: CharPrefab
     gameObject: {fileID: 4094342334004014635, guid: 2bb0967474b9c4cfaadb4aa92d566564, type: 3}
@@ -489,6 +489,8 @@ MonoBehaviour:
     gameObject: {fileID: 11400000, guid: 02002f2cf0ad943f2b6135aa616df81f, type: 2}
   - id: BlackKnight
     gameObject: {fileID: 11400000, guid: c5247286258774a74860cc43ce5a3af2, type: 2}
+  - id: XitrixAnime
+    gameObject: {fileID: 11400000, guid: 6deb6faa913ad4fb090803215154ad24, type: 2}
   currentPlayerObject: {fileID: 0}
 --- !u!4 &2132061364
 Transform:
