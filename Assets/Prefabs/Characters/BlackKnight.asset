@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5876d934c15f4800a5b57ce69e43130, type: 3}
   m_Name: BlackKnight
   m_EditorClassIdentifier: 
-  charName: "\u0414\u0430\u043D\u044F (BurgerKing)"
+  charName: "\u0414\u0430\u043D\u044F"
   avatar: {fileID: 21300000, guid: 2cba3df3d1d3f4088a5e67860e62d0c3, type: 3}
   tileset:
   - {fileID: -1070524740, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
