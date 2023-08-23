@@ -184,6 +184,7 @@ public class GlobalDirector : MonoBehaviour
 
     public static void SetGlitchEnabled(bool enabled)
     {
+        if (Camera.main == null) return;
         Camera.main.GetComponent<AnalogGlitch>().enabled = enabled;
         Camera.main.GetComponent<DigitalGlitch>().enabled = enabled;
     }
