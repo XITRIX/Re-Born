@@ -462,6 +462,10 @@ MonoBehaviour:
     gameObject: {fileID: 4459585793960854481, guid: cbc6c6f5fb0b944239dba681f4bdd757, type: 3}
   - id: VNCanvasPrefab
     gameObject: {fileID: 2513248044064945196, guid: 3645b812df0da40c8bb922253cab1b6c, type: 3}
+  - id: DinoGame
+    gameObject: {fileID: 646650799402594321, guid: 06cc4fea4431c4dcda0d0756ee640b4f, type: 3}
+  - id: FlappyGame
+    gameObject: {fileID: 646650799402594321, guid: 49c0627be2a844395bc4cbd1c7e075e4, type: 3}
   characters:
   - id: Player
     gameObject: {fileID: 11400000, guid: 716dedeaf824942df91e2f6d9ed03e83, type: 2}

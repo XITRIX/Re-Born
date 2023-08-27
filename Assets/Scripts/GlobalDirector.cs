@@ -34,6 +34,9 @@ public class GlobalDirector : MonoBehaviour
 
     public CharacterScript.Direction? lastPlayerDirection = null;
 
+    private DinoGame _dinoGame;
+    private FlappyGame _flappyGame;
+
     public GlobalDirector()
     {
         Shared = this;
@@ -187,5 +190,29 @@ public class GlobalDirector : MonoBehaviour
         if (Camera.main == null) return;
         Camera.main.GetComponent<AnalogGlitch>().enabled = enabled;
         Camera.main.GetComponent<DigitalGlitch>().enabled = enabled;
+    }
+
+    public static void ShowDinoGame(bool show)
+    {
+        if (show)
+        {
+            Shared._dinoGame = Instantiate(Shared.prefabs.First(v => v.id == "DinoGame").gameObject).GetComponent<DinoGame>();
+        }
+        else
+        {
+            Destroy(Shared._dinoGame.gameObject); 
+        }
+    }
+
+    public static void ShowFlappyGame(bool show)
+    {
+        if (show)
+        {
+            Shared._flappyGame = Instantiate(Shared.prefabs.First(v => v.id == "FlappyGame").gameObject).GetComponent<FlappyGame>();
+        }
+        else
+        {
+            Destroy(Shared._flappyGame.gameObject); 
+        }
     }
 }
