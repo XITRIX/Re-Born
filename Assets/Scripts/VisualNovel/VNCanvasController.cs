@@ -17,6 +17,7 @@ public class VNCanvasController : MonoBehaviour
     public VerticalLayoutGroup buttonsHolder;
     public Button buttonPrefab;
     public Image bgImage;
+    public Image bgPicImage;
 
     // Start is called before the first frame update
     void Awake()
@@ -75,6 +76,37 @@ public class VNCanvasController : MonoBehaviour
             }
 
             bgImage.color = targetImageColor;
+        }
+    }
+    
+    public IEnumerator SetBackgroundImage(Sprite image, bool fit, float seconds)
+    {
+        bgPicImage.enabled = true;
+        var startImageColor = bgPicImage.color;
+        var targetImageColor = startImageColor;
+        targetImageColor.a = image == null ? 0 : 1;
+        bgPicImage.sprite = image;
+
+        bgPicImage.GetComponent<AspectRatioFitter>().aspectMode =
+            fit ? AspectRatioFitter.AspectMode.FitInParent : AspectRatioFitter.AspectMode.EnvelopeParent;
+        
+        if (seconds == 0)
+        {
+            bgPicImage.color = targetImageColor;
+        }
+        else
+        {
+            var delta = Time.fixedDeltaTime;
+            float counter = 0;
+        
+            while (counter <= seconds)
+            {
+                bgPicImage.color = Color.Lerp(startImageColor, targetImageColor, counter / seconds);
+                counter += delta;
+                yield return new WaitForSeconds(delta);
+            }
+        
+            bgPicImage.color = targetImageColor;
         }
     }
 }
