@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Nikita
   m_EditorClassIdentifier: 
   charName: "\u041D\u0438\u043A\u0438\u0442\u043E\u0441 \u0412\u0435\u043B\u0438\u043A\u0438\u0439"
-  avatar: {fileID: -1099842926, guid: 7f12f253bb94b4e49bdda73381a34d6e, type: 3}
+  avatar: {fileID: -856933034, guid: 8f442c66af71d4cf582e65d6d211c2ce, type: 3}
   tileset:
-  - {fileID: -1070524740, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: 32208439, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: -1935696230, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: -732643728, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: -578462611, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: 248528352, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: 50105469, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: 719041626, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: -1498733352, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: 2062526209, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: 1608671798, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
-  - {fileID: 947572631, guid: 6494ea42ec6c34ef6b353a505b84f4de, type: 3}
+  - {fileID: -985141999, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: 288645735, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: 686083656, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: 1257577419, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: -1431234898, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: 1384129000, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: -1424090609, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: -903963918, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: -1673762143, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: 1021336964, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: 1465584736, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}
+  - {fileID: -688838867, guid: 294f7a6cc354442a4ab215f5a3b06a3b, type: 3}

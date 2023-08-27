@@ -23,18 +23,24 @@ public class TypewriterEffect : MonoBehaviour
     IEnumerator RevealText(string originalString)
     {
         startSkipping = false;
-        _textBox.text = "";
+        // _textBox.text = "";
 
         var trimmedString = originalString.Trim();
         _textBox.text = trimmedString;
         _textBox.maxVisibleCharacters = 0;
         
         var numCharsRevealed = 0;
-        while (numCharsRevealed < trimmedString.Length)
+        
+        VNCanvasController.Shared.audioSource.Play();
+
+        // var count = _textBox.textInfo.characterCount > 0 ? _textBox.textInfo.characterCount : trimmedString.Length;
+        _textBox.ForceMeshUpdate();
+        while (numCharsRevealed < _textBox.textInfo.characterCount)
+        // while (numCharsRevealed < trimmedString.Length)
         {
             startSkipping |= !Input.GetButton("Submit");
             
-            while (originalString[numCharsRevealed] == ' ')
+            while (numCharsRevealed < originalString.Length && originalString[numCharsRevealed] == ' ')
                 ++numCharsRevealed;
 
             // if (originalString[numCharsRevealed] == '<')
@@ -42,12 +48,12 @@ public class TypewriterEffect : MonoBehaviour
             //     do ++numCharsRevealed;
             //     while (originalString[numCharsRevealed] != '>');
             // }
-
-            ++numCharsRevealed;
             
+            ++numCharsRevealed;
             _textBox.maxVisibleCharacters = numCharsRevealed;
 
             yield return new WaitForSeconds(startSkipping && Input.GetButton("Submit") ? 0.01f : 0.07f);
         }
+        VNCanvasController.Shared.audioSource.Stop();
     } 
 }

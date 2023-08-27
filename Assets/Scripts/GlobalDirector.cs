@@ -31,6 +31,7 @@ public class GlobalDirector : MonoBehaviour
     public readonly Dictionary<string, GameObject> GameObjectsStash = new();
     private readonly HashSet<string> _scenarioKeys = new();
     private Canvas _vnCanvas;
+    private AudioSource _audioSource;
 
     public CharacterScript.Direction? lastPlayerDirection = null;
 
@@ -44,6 +45,7 @@ public class GlobalDirector : MonoBehaviour
     
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         _vnCanvas = Instantiate(prefabs.First(v => v.id == "VNCanvasPrefab").gameObject).GetComponent<Canvas>();
         Application.targetFrameRate = 60;
     }
@@ -215,4 +217,34 @@ public class GlobalDirector : MonoBehaviour
             Destroy(Shared._flappyGame.gameObject); 
         }
     }
+
+    public static void BackgroundMusic([CanBeNull] AudioClip music)
+    {
+        if (music == null)
+        {
+            Shared._audioSource.Stop();
+            return;
+        }
+
+        if (Shared._audioSource.clip == null)
+        {
+            Shared._audioSource.clip = music;
+        } 
+        else if (Shared._audioSource.clip != music)
+        {
+            if (Shared._audioSource.isPlaying)
+                Shared._audioSource.Stop();
+            
+            Shared._audioSource.clip = music;
+        }
+        
+        if (!Shared._audioSource.isPlaying)
+            Shared._audioSource.Play();
+    }
+    
+    public static void PlaySFX(AudioClip music)
+    {
+        Shared._audioSource.PlayOneShot(music);
+    }
+
 }

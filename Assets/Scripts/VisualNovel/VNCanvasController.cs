@@ -18,10 +18,13 @@ public class VNCanvasController : MonoBehaviour
     public Button buttonPrefab;
     public Image bgImage;
     public Image bgPicImage;
+    
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         Shared = this;
         messageHolder.SetActive(false);
     }
