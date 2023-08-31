@@ -101,11 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityId: 
-  interactionScenario: {fileID: 0}
   movementSpeed: 2
   animationTick: 8
   characterModel: {fileID: 11400000, guid: 560774ff9a5044660abe19eec5639bb9, type: 2}
   direction: {x: 0, y: 0}
+  lastDirection: 0
 --- !u!50 &53003269083061337
 Rigidbody2D:
   serializedVersion: 4
