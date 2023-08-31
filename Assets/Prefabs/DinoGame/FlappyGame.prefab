@@ -1040,14 +1040,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4916262483004864906, guid: 65d9d8a96424b45f78227b480227cf88, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5944660749956444716, guid: 65d9d8a96424b45f78227b480227cf88, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -12
-      objectReference: {fileID: 0}
     - target: {fileID: 8182923957334899066, guid: 65d9d8a96424b45f78227b480227cf88, type: 3}
       propertyPath: m_Name
       value: GameObject
@@ -1084,6 +1076,7 @@ MonoBehaviour:
   randomY: 1
   yFrom: 45
   yTo: 170
+  randomXRange: 0
 --- !u!224 &5198375251336643563 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4020464571226890942, guid: 65d9d8a96424b45f78227b480227cf88, type: 3}

@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   text: {fileID: 4333493799620223102}
+  totalScore: 0
   score: 0
   speed: 1
   isDead: 0
@@ -516,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  jumpForce: 2300
+  jumpForce: 2000
   isOnFloor: 0
 --- !u!1 &9035212072305472941
 GameObject:
@@ -782,6 +783,10 @@ PrefabInstance:
     - target: {fileID: 4518728458753300737, guid: c4819bc22913c4720aeb7d1e56811bb7, type: 3}
       propertyPath: spawnCopyAt
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518728458753300737, guid: c4819bc22913c4720aeb7d1e56811bb7, type: 3}
+      propertyPath: randomXRange
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4518728458753300737, guid: c4819bc22913c4720aeb7d1e56811bb7, type: 3}
       propertyPath: spawnCopyAfter

@@ -11,14 +11,17 @@ public class DinoFloor : MonoBehaviour
     public bool randomY = false;
     public float yFrom = 0;
     public float yTo = 0;
+    public float randomXRange = 0;
     
     private bool alreadySpawned = false;
     private RectTransform _rectTransform;
+    private float randomRange;
     
     // Start is called before the first frame update
     void Start()
     {
         _rectTransform = GetComponent<RectTransform>();
+        randomRange = Random.Range(0, randomXRange);
     }
 
     // Update is called once per frame
@@ -30,7 +33,7 @@ public class DinoFloor : MonoBehaviour
         
         Debug.Log(_rectTransform.anchoredPosition.x);
 
-        if (!alreadySpawned && _rectTransform.anchoredPosition.x < spawnCopyAfter)
+        if (!alreadySpawned && _rectTransform.anchoredPosition.x < spawnCopyAfter + randomRange)
         {
             var obj = Instantiate(gameObject, transform.parent);
 
