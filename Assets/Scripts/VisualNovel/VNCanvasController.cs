@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class VNCanvasController : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class VNCanvasController : MonoBehaviour
     public Image bgPicImage;
     
     public AudioSource audioSource;
+    
+    public RawImage videoImage;
+    public VideoPlayer videoPlayer;
 
     // Start is called before the first frame update
     void Awake()
@@ -53,6 +57,22 @@ public class VNCanvasController : MonoBehaviour
     public static IEnumerator SetMessage(string message)
     {
         yield return Shared.messageField.SetText(message);
+    }
+
+    public static void StartTekkenVideo(VideoClip clip)
+    {
+        Shared.videoPlayer.targetTexture.Release();
+        Shared.videoPlayer.clip = clip;
+        Shared.videoPlayer.enabled = true;
+        Shared.videoPlayer.Play();
+        Shared.videoImage.enabled = true;
+    }
+
+    public static void StopTekkenVideo()
+    {
+        Shared.videoPlayer.Stop();
+        Shared.videoImage.enabled = false;
+        Shared.videoPlayer.enabled = false;
     }
 
     public IEnumerator ChangeBackgroundFading(bool fade, float seconds)
