@@ -496,6 +496,8 @@ MonoBehaviour:
     gameObject: {fileID: 11400000, guid: c5247286258774a74860cc43ce5a3af2, type: 2}
   - id: XitrixAnime
     gameObject: {fileID: 11400000, guid: 6deb6faa913ad4fb090803215154ad24, type: 2}
+  - id: XitrixHuman
+    gameObject: {fileID: 11400000, guid: fc48ecdc5c3ab4720977a0a7aca59e42, type: 2}
   currentPlayerObject: {fileID: 0}
 --- !u!4 &2132061364
 Transform:
