@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Georgy
   m_EditorClassIdentifier: 
   charName: "\u0416\u043E\u0440\u0430"
-  avatar: {fileID: 881413843, guid: ccbf61e9a372148cd95a336f8e27a4d5, type: 3}
+  avatar: {fileID: 21300000, guid: 17d107df3881b4f1d92eeed749918b9e, type: 3}
   tileset:
   - {fileID: -1471000995, guid: f371238579077426690ae1b27940b8bb, type: 3}
   - {fileID: 870257346, guid: f371238579077426690ae1b27940b8bb, type: 3}

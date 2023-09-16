@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
 {
     public float characterWalkSpeed = 2;
     public float characterRunSpeed = 4;
+    public bool canRun = true;
     
     private CharacterScript _character;
     private readonly List<EntityScript> _objectsToInteract = new();
@@ -89,8 +90,7 @@ public class PlayerInput : MonoBehaviour
             direction = Vector2.zero;
         }
 
-        // _character.movementSpeed = Input.GetKey(KeyCode.LeftShift) ? characterRunSpeed : characterWalkSpeed;
-        _character.movementSpeed = Input.GetButton("Fire3") ? characterRunSpeed : characterWalkSpeed;
+        _character.movementSpeed = (Input.GetButton("Fire3") && canRun) ? characterRunSpeed : characterWalkSpeed;
 
         _character.direction = direction;
     }

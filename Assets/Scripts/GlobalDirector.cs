@@ -150,6 +150,11 @@ public class GlobalDirector : MonoBehaviour
         Shared.currentPlayerObject.enabled = enabled;
     }
 
+    public static void SetPlayerCanRun(bool canRun)
+    {
+        Shared.currentPlayerObject.canRun = canRun;
+    }
+
     public static GameObject GetEntityById(string id)
     {
         return Shared.GameObjectsStash.TryGetValue(id, out var value) ? value : null;
